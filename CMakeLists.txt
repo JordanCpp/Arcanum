@@ -20,6 +20,10 @@ include_directories("source/")
 
 file(GLOB_RECURSE SOURCE_FILES "source/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+if (APPLE)
+  add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCE_FILES})
+else()
+  add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+endif()
 
-target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
+target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})

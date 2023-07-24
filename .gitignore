@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Xcode
+*.xcodeproj
+
+#CMake
+
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+build/
+*.cmake

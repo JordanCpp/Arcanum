@@ -6,9 +6,11 @@ using namespace Arcanum::Game;
 
 Application::Application(Arcanum::Game::Settings* settings) :
 	Settings(settings),
-	Canvas(settings->getWindowSize(), settings->getWindowTitle())
+	Canvas(settings->getWindowSize(), settings->getWindowTitle()),
+	SpriteManager(&Canvas, &FileManager, &ArtLoader),
+	MainMenu(&Canvas)
+
 {
-	std::cout << FileManager.getFile("oemes/artlist.mes")->getContent().data() << std::endl;
 }
 
 Application::~Application()
@@ -21,5 +23,11 @@ void Application::Run()
 
 	while (Canvas.getEvent(report))
 	{
+		MainMenu.Draw();
+
+		SpriteManager.getSprite("art/scenery/engine.ART")->single()->draw(Point(0, 0));
+		SpriteManager.getSprite("art/scenery/Adv_engine.ART")->single()->draw(Point(300, 300));
+		SpriteManager.getSprite("art/scenery/cave_entrance.ART")->single()->draw(Point(450, 0));
+		SpriteManager.getSprite("art/monster/cow/cowuwxab.ART")->getImage(27)->draw(Point(50, 400));
 	}
 }

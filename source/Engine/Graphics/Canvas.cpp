@@ -1,6 +1,6 @@
 #include <Engine/Graphics/Canvas.hpp>
 #include <iostream>
-#include <exception>
+#include <stdexcept>
 
 using namespace Engine::Graphics;
 
@@ -28,6 +28,21 @@ Canvas::~Canvas()
     SDL_DestroyRenderer(Render);
     SDL_DestroyWindow(Window);
     SDL_Quit();
+}
+
+const Point& Canvas::getSize()
+{
+    int w = 0;
+    int h = 0;
+
+    SDL_GetWindowSize(Window, &w, &h);
+
+    return Point(w, h);
+}
+
+SDL_Renderer* Canvas::getRender()
+{
+    return Render;
 }
 
 bool Canvas::getEvent(SDL_Event& dest)

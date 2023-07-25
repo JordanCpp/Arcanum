@@ -1,0 +1,28 @@
+#ifndef _Engine_Managers_SpriteManager_hpp_
+#define _Engine_Managers_SpriteManager_hpp_
+
+#include <Engine/Graphics/Sprite.hpp>
+#include <Engine/Managers/FileManager.hpp>
+#include <Engine/Loaders/ArtLoader.hpp>
+#include <unordered_map>
+#include <memory>
+
+namespace Engine
+{
+    namespace Managers
+    {
+        class SpriteManager
+        {
+        public:
+            SpriteManager(Graphics::Canvas* canvas, Managers::FileManager* fileManager, Loaders::ArtLoader * artLoader);
+            std::shared_ptr<Graphics::Sprite> getSprite(const std::string& path);
+        private:
+            Graphics::Canvas* Canvas;
+            Managers::FileManager* FileManager;
+            Loaders::ArtLoader* ArtLoader;
+            std::unordered_map<std::string, std::shared_ptr<Graphics::Sprite>> Sprites;
+        };
+    }
+}
+
+#endif

@@ -4,6 +4,7 @@
 #include <SDL.h>
 #include <cstdint>
 #include <string>
+#include <Engine/Graphics/Point.hpp>
 
 namespace Engine
 {
@@ -12,7 +13,7 @@ namespace Engine
 		class Canvas
 		{
 		public:
-			Canvas(size_t width, size_t heigth, const std::string& title);
+			Canvas(const Point& size, const std::string& title);
 			~Canvas();
 			bool getEvent(SDL_Event& dest);
 		private:

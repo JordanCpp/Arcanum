@@ -4,7 +4,7 @@
 
 using namespace Engine::Graphics;
 
-Canvas::Canvas(size_t width, size_t heigth, const std::string& title) :
+Canvas::Canvas(const Point& size, const std::string& title) :
     Running(true),
     Window(nullptr),
     Render(nullptr)
@@ -12,7 +12,7 @@ Canvas::Canvas(size_t width, size_t heigth, const std::string& title) :
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
         throw std::runtime_error(SDL_GetError());
 
-    Window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, heigth, SDL_WINDOW_SHOWN);
+    Window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, (int)size.X, (int)size.Y, SDL_WINDOW_SHOWN);
 
     if (!Window)
         throw std::runtime_error(SDL_GetError());

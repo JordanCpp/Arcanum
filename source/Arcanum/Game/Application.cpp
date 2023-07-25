@@ -1,10 +1,14 @@
 #include <Arcanum/Game/Application.hpp>
+#include <iostream>
 
+using namespace Engine::Graphics;
 using namespace Arcanum::Game;
 
-Application::Application() :
-	Canvas(1024, 768, "Arcanum project")
+Application::Application(Arcanum::Game::Settings* settings) :
+	Settings(settings),
+	Canvas(settings->getWindowSize(), settings->getWindowTitle())
 {
+	std::cout << FileManager.getFile("oemes/artlist.mes")->getContent().data() << std::endl;
 }
 
 Application::~Application()

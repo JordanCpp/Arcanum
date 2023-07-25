@@ -2,6 +2,8 @@
 #define _Arcanum_Game_Application_hpp_
 
 #include <Engine/Graphics/Canvas.hpp>
+#include <Arcanum/Game/Settings.hpp>
+#include <Engine/Managers/FileManager.hpp>
 
 namespace Arcanum
 {
@@ -10,11 +12,13 @@ namespace Arcanum
 		class Application
 		{
 		public:
-			Application();
+			Application(Settings* settings);
 			~Application();
 			void Run();
 		private:
+			Settings* Settings;
 			Engine::Graphics::Canvas Canvas;
+			Engine::Managers::FileManager FileManager;
 		};
 	}
 }

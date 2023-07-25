@@ -372,3 +372,5 @@ CMakeFiles/
 CMakeScripts/
 build/
 *.cmake
+
+dependencies

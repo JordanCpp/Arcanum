@@ -1,7 +1,7 @@
 #include <Arcanum/Game/Settings.hpp>
 
-using namespace Engine::Graphics;
-using namespace Arcanum::Game;
+using namespace engine::graphics;
+using namespace arcanum::game;
 
 const Point& Settings::getWindowSize()
 {

@@ -1,11 +1,11 @@
 #include <Engine/Loaders/DatLoader.hpp>
 #include <zlib.h>
 
-using namespace Engine::Loaders;
-using namespace Engine::Readers;
-using namespace Engine::Formats;
+using namespace engine::loaders;
+using namespace engine::readers;
+using namespace engine::formats;
 
-DatLoader::DatLoader(Readers::DatList* datList) :
+DatLoader::DatLoader(readers::DatList* datList) :
 	mDatList(datList)
 {
 	mBuffer.reserve(DatLoader::Bytes);

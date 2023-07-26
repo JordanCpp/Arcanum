@@ -5,25 +5,25 @@
 #include <Engine/Graphics/Point.hpp>
 #include <Engine/Readers/FileReader.hpp>
 
-namespace Engine
+namespace engine
 {
-	namespace Loaders
+	namespace loaders
 	{
 		class ArtLoader
 		{
 		public:
-			void Load(Readers::FileReader* fileReader);
-			const Graphics::Point& getSize();
-			const Graphics::Point& getOffset();
-			const Graphics::Point& getDelta();
+			void Load(readers::FileReader* fileReader);
+			const graphics::Point& getSize();
+			const graphics::Point& getOffset();
+			const graphics::Point& getDelta();
 			uint8_t* getPixels();
 			size_t getFrames();
 			void frame(size_t index);
 		private:
-			Formats::ArtFile mFile;
-			Graphics::Point mSize;
-			Graphics::Point mOffset;
-			Graphics::Point mDelta;
+			formats::ArtFile mFile;
+			graphics::Point mSize;
+			graphics::Point mOffset;
+			graphics::Point mDelta;
 			std::vector<uint8_t> mPixels;
 		};
 	}

@@ -7,9 +7,9 @@
 #include <unordered_map>
 #include <Engine/Common/PathNormalizer.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Readers
+    namespace readers
     {
         class DatItem
         {
@@ -46,7 +46,7 @@ namespace Engine
         public:
             bool reset(const std::string& file, DatList& datList);
         private:
-            Common::PathNormalizer mPathNormalizer;
+            common::PathNormalizer mPathNormalizer;
             std::ifstream mInput;
         };
     }

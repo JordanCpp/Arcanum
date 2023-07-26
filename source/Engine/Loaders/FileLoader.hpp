@@ -5,14 +5,14 @@
 #include <string>
 #include <Engine/Formats/DataFile.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Loaders
+    namespace loaders
     {
         class FileLoader
         {
         public:
-            void reset(const std::string& path, Formats::DataFile* dataFile);
+            void reset(const std::string& path, formats::DataFile* dataFile);
         private:
             std::ifstream mInput;
         };

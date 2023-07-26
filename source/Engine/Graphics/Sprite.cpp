@@ -1,6 +1,6 @@
 #include <Engine/Graphics/Sprite.hpp>
 
-using namespace Engine::Graphics;
+using namespace engine::graphics;
 
 Sprite::~Sprite()
 {

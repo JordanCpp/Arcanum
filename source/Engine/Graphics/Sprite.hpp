@@ -4,9 +4,9 @@
 #include <Engine/Graphics/Image.hpp>
 #include <vector>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Sprite
 		{

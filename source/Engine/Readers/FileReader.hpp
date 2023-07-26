@@ -4,19 +4,19 @@
 #include <cstdint>
 #include <Engine/Formats/DataFile.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Readers
+    namespace readers
     {
         class FileReader
         {
         public:
-            void open(Formats::DataFile* dataFile);
+            void open(formats::DataFile* dataFile);
             void close();
             void read(void* dest, size_t bytes);
         private:
             size_t mOffset;
-            Formats::DataFile* mDataFile;
+            formats::DataFile* mDataFile;
         };
     }
 }

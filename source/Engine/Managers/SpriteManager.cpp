@@ -1,9 +1,9 @@
 #include <Engine/Managers/SpriteManager.hpp>
 
-using namespace Engine::Managers;
-using namespace Engine::Graphics;
-using namespace Engine::Readers;
-using namespace Engine::Loaders;
+using namespace engine::managers;
+using namespace engine::graphics;
+using namespace engine::readers;
+using namespace engine::loaders;
 
 SpriteManager::SpriteManager(Canvas* canvas, FileManager* fileManager, ArtLoader* artLoader) :
 	mCanvas(canvas),

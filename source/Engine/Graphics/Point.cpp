@@ -1,6 +1,6 @@
 #include <Engine/Graphics/Point.hpp>
 
-using namespace Engine::Graphics;
+using namespace engine::graphics;
 
 Point::Point() :
 	X(0),

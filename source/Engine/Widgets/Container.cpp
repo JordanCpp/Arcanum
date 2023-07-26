@@ -1,6 +1,6 @@
 #include <Engine/Widgets/Container.hpp>
 
-using namespace Engine::Widgets;
+using namespace engine::widgets;
 
 void Container::add(Widget* widget)
 {

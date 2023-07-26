@@ -6,9 +6,9 @@
 #include <string>
 #include <Engine/Graphics/Point.hpp>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Canvas
 		{
@@ -22,6 +22,7 @@ namespace Engine
 			bool mRunning;
 			SDL_Window* mWindow;
 			SDL_Renderer* mRender;
+			Point mSize;
 		};
 	}
 }

@@ -3,21 +3,21 @@
 
 #include <Engine/Graphics/Canvas.hpp>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Image
 		{
 		public:
-			Image(Graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta);
+			Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta);
 			~Image();
 			const Point& getSize();
 			const Point& getOffset();
 			const Point& getDelta();
 			void draw(const Point& pos);
 		private:
-			Graphics::Canvas* mCanvas;
+			graphics::Canvas* mCanvas;
 			SDL_Texture* mTexture;
 			Point mSize;
 			Point mOffset;

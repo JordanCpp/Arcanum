@@ -3,19 +3,19 @@
 
 #include <Engine/Graphics/Canvas.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Widgets
+    namespace widgets
     {
         class Widget
         {
         public:
-            Widget(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
+            Widget(graphics::Canvas* canvas, const graphics::Point& pos, const graphics::Point& size);
             virtual void draw() = 0;
         private:
-            Graphics::Canvas* mCanvas;
-            Graphics::Point mPos;
-            Graphics::Point mSize;
+            graphics::Canvas* mCanvas;
+            graphics::Point mPos;
+            graphics::Point mSize;
         };
     }
 }

@@ -4,9 +4,9 @@
 #include <Engine/Widgets/Widget.hpp>
 #include <vector>
 
-namespace Engine
+namespace engine
 {
-    namespace Widgets
+    namespace widgets
     {
         class Container
         {

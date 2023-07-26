@@ -1,6 +1,6 @@
 #include <Engine/Formats/DataFile.hpp>
 
-using namespace Engine::Formats;
+using namespace engine::formats;
 
 std::vector<uint8_t>& DataFile::getContent()
 {

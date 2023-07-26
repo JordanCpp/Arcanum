@@ -1,8 +1,8 @@
 #include <Arcanum/Game/Application.hpp>
 #include <iostream>
 
-using namespace Arcanum::Game;
-using namespace Engine::Graphics;
+using namespace arcanum::game;
+using namespace engine::graphics;
 
 int main(int argc, char* argv[])
 {

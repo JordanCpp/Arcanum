@@ -3,14 +3,14 @@
 
 #include <Engine/Widgets/Container.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Widgets 
+    namespace widgets 
     {
         class Form : public Widget
         {
         public:
-            Form(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
+            Form(graphics::Canvas* canvas, const graphics::Point& pos, const graphics::Point& size);
             void draw();
             void add(Widget* widget);
         private:

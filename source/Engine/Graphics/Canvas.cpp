@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
-using namespace Engine::Graphics;
+using namespace engine::graphics;
 
 Canvas::Canvas(const Point& size, const std::string& title) :
     mRunning(true),
@@ -37,7 +37,9 @@ const Point& Canvas::getSize()
 
     SDL_GetWindowSize(mWindow, &w, &h);
 
-    return Point(w, h);
+    mSize = Point(w, h);
+
+    return mSize;
 }
 
 SDL_Renderer* Canvas::getRender()

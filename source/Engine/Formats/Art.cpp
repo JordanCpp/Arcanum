@@ -6,8 +6,8 @@
 #include <sstream>
 #include <cstring>
 
-using namespace Engine::Formats;
-using namespace Engine::Readers;
+using namespace engine::formats;
+using namespace engine::readers;
 
 bool ArtFrame::Inc()
 {
@@ -37,7 +37,7 @@ void ArtFrame::Reset()
 	px = py = 0;
 }
 
-size_t ArtFrame::index(int x, int y)
+size_t ArtFrame::index(size_t x, size_t y)
 {
 	return ((header.width * y) + x);
 }
@@ -64,7 +64,7 @@ void ArtFrame::load(FileReader* source)
 	source->read(&data[0], header.size);
 }
 
-uint8_t ArtFrame::getValue(int x, int y)
+uint8_t ArtFrame::getValue(size_t x, size_t y)
 {
 	return pixels[index(x, y)];
 }

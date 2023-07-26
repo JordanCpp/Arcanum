@@ -1,8 +1,8 @@
 #include <Engine/Readers/FileReader.hpp>
 #include  <string.h>
 
-using namespace Engine::Readers;
-using namespace Engine::Formats;
+using namespace engine::readers;
+using namespace engine::formats;
 
 void FileReader::open(DataFile* dataFile)
 {

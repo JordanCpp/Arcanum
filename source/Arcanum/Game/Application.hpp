@@ -7,9 +7,9 @@
 #include <Engine/UI/MainMenu.hpp>
 #include <Engine/Managers/SpriteManager.hpp>
 
-namespace Arcanum
+namespace arcanum
 {
-	namespace Game
+	namespace game
 	{
 		class Application
 		{
@@ -18,12 +18,12 @@ namespace Arcanum
 			~Application();
 			void run();
 		private:
-			Engine::Loaders::ArtLoader mArtLoader;
+			engine::loaders::ArtLoader mArtLoader;
 			Settings* mSettings;
-			Engine::Graphics::Canvas mCanvas;
-			Engine::Managers::FileManager mFileManager;
-			Engine::Managers::SpriteManager mSpriteManager;
-			Engine::UI::MainMenu mMainMenu;
+			engine::graphics::Canvas mCanvas;
+			engine::managers::FileManager mFileManager;
+			engine::managers::SpriteManager mSpriteManager;
+			engine::ui::MainMenu mMainMenu;
 		};
 	}
 }

@@ -3,9 +3,9 @@
 #include <filesystem>
 #include <iostream>
 
-using namespace Engine::Managers;
-using namespace Engine::Formats;
-using namespace Engine::Loaders;
+using namespace engine::managers;
+using namespace engine::formats;
+using namespace engine::loaders;
 
 FileManager::FileManager() :
 	mDatLoader(&mDatList)

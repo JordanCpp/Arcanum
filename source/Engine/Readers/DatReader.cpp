@@ -2,7 +2,7 @@
 #include <string.h>
 #include <zlib.h>
 
-using namespace Engine::Readers;
+using namespace engine::readers;
 
 bool DatReader::reset(const std::string& file, DatList& datList)
 {

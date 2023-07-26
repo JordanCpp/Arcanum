@@ -4,9 +4,9 @@
 #include <vector>
 #include <cstdint>
 
-namespace Engine
+namespace engine
 {
-    namespace Formats
+    namespace formats
     {
         class DataFile
         {

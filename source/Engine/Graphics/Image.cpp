@@ -1,9 +1,9 @@
 #include <Engine/Graphics/Image.hpp>
 #include <stdexcept>
 
-using namespace Engine::Graphics;
+using namespace engine::graphics;
 
-Image::Image(Graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :
+Image::Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :
 	mCanvas(canvas),
     mSize(size),
     mOffset(offset),

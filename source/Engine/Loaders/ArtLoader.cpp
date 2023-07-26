@@ -1,9 +1,9 @@
 #include <Engine/Loaders/ArtLoader.hpp>
 
-using namespace Engine::Graphics;
-using namespace Engine::Loaders;
-using namespace Engine::Readers;
-using namespace Engine::Formats;
+using namespace engine::graphics;
+using namespace engine::loaders;
+using namespace engine::readers;
+using namespace engine::formats;
 
 void ArtLoader::Load(FileReader* fileReader)
 {

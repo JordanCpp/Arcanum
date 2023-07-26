@@ -1,8 +1,8 @@
 #include <Engine/Loaders/FileLoader.hpp>
 #include <exception>
 
-using namespace Engine::Loaders;
-using namespace Engine::Formats;
+using namespace engine::loaders;
+using namespace engine::formats;
 
 void FileLoader::reset(const std::string& path, DataFile* dataFile)
 {

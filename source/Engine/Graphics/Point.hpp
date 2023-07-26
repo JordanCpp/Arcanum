@@ -3,9 +3,9 @@
 
 #include <cstdint>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Point
 		{

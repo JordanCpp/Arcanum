@@ -10,9 +10,9 @@
 
 #include <Engine/Readers/FileReader.hpp>
 
-namespace Engine
+namespace engine
 {
-	namespace Formats
+	namespace formats
 	{
 		struct MissingFile
 		{
@@ -76,15 +76,15 @@ namespace Engine
 			void Reset();
 			bool EOD();
 
-			size_t index(int x, int y);
+			size_t index(size_t x, size_t y);
 
 			ArtFrameHeader& getHeader() { return header; }
-			void loadHeader(Readers::FileReader* source);
+			void loadHeader(readers::FileReader* source);
 			void saveHeader(std::ofstream& dest);
 
-			void load(Readers::FileReader* source);
+			void load(readers::FileReader* source);
 
-			uint8_t getValue(int x, int y);
+			uint8_t getValue(size_t x, size_t y);
 			void setValue(int x, int y, uint8_t ch);
 			void setSize(int w, int h);
 			void decode();
@@ -101,7 +101,7 @@ namespace Engine
 			int key_frame = { 0 };
 			bool animated = { 0 };
 
-			void loadArt(Readers::FileReader* source);
+			void loadArt(readers::FileReader* source);
 		};
 	}
 }

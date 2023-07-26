@@ -15,7 +15,7 @@ namespace engine
 		public:
 			Canvas(const Point& size, const std::string& title);
 			~Canvas();
-			const Point& getSize();
+			const Point getSize();
 			SDL_Renderer* getRender();
 			bool getEvent(SDL_Event& dest);
 		private:

@@ -30,7 +30,7 @@ Canvas::~Canvas()
     SDL_Quit();
 }
 
-const Point& Canvas::getSize()
+const Point Canvas::getSize()
 {
     int w = 0;
     int h = 0;

@@ -374,3 +374,6 @@ build/
 *.cmake
 
 dependencies
+
+# macOS
+.DS_Store

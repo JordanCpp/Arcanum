@@ -7,20 +7,20 @@
 #include <unordered_map>
 #include <memory>
 
-namespace Engine
+namespace engine
 {
-    namespace Managers
+    namespace managers
     {
         class SpriteManager
         {
         public:
-            SpriteManager(Graphics::Canvas* canvas, Managers::FileManager* fileManager, Loaders::ArtLoader * artLoader);
-            std::shared_ptr<Graphics::Sprite> getSprite(const std::string& path);
+            SpriteManager(graphics::Canvas* canvas, managers::FileManager* fileManager, loaders::ArtLoader * artLoader);
+            std::shared_ptr<graphics::Sprite> getSprite(const std::string& path);
         private:
-            Graphics::Canvas* Canvas;
-            Managers::FileManager* FileManager;
-            Loaders::ArtLoader* ArtLoader;
-            std::unordered_map<std::string, std::shared_ptr<Graphics::Sprite>> Sprites;
+            graphics::Canvas* mCanvas;
+            managers::FileManager* mFileManager;
+            loaders::ArtLoader* mArtLoader;
+            std::unordered_map<std::string, std::shared_ptr<graphics::Sprite>> mSprites;
         };
     }
 }

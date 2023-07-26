@@ -1,41 +1,42 @@
 #include <Engine/Managers/SpriteManager.hpp>
 
-using namespace Engine::Managers;
-using namespace Engine::Graphics;
-using namespace Engine::Readers;
+using namespace engine::managers;
+using namespace engine::graphics;
+using namespace engine::readers;
+using namespace engine::loaders;
 
-SpriteManager::SpriteManager(Graphics::Canvas* canvas, Managers::FileManager* fileManager, Loaders::ArtLoader* artLoader) :
-	Canvas(canvas),
-	FileManager(fileManager),
-	ArtLoader(artLoader)
+SpriteManager::SpriteManager(Canvas* canvas, FileManager* fileManager, ArtLoader* artLoader) :
+	mCanvas(canvas),
+	mFileManager(fileManager),
+	mArtLoader(artLoader)
 {
 }
 
 std::shared_ptr<Sprite> SpriteManager::getSprite(const std::string& path)
 {
-	auto i = Sprites.find(path);
+	auto i = mSprites.find(path);
 
 	std::shared_ptr<Sprite> result = nullptr;
 
-    if (i == Sprites.end())
+    if (i == mSprites.end())
     {
         FileReader reader;
-        reader.open(FileManager->getFile(path));
+        reader.open(mFileManager->getFile(path));
 
-        ArtLoader->Load(&reader);
+        mArtLoader->Load(&reader);
 
         result = std::make_shared<Sprite>();
 
-        for (size_t i = 0; i < ArtLoader->Frames(); i++)
+        for (size_t i = 0; i < mArtLoader->getFrames(); i++)
         {
-            ArtLoader->Frame(i);
+            mArtLoader->frame(i);
 
-            Image* image = new Image(Canvas, ArtLoader->Pixels(), ArtLoader->getSize(), ArtLoader->getOffset(), ArtLoader->getDelta());
+            Image* image = new Image(mCanvas, mArtLoader->getPixels(), mArtLoader->getSize(), mArtLoader->getOffset(), mArtLoader->getDelta());
 
             result->append(image);
         }
 
-        Sprites.emplace(path, result);
+        mSprites.emplace(path, result);
     }
     else
     {

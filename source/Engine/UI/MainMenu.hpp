@@ -3,17 +3,17 @@
 
 #include <Engine/Widgets/Form.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace UI
+    namespace ui
     {
         class MainMenu
         {
         public:
-            MainMenu(Graphics::Canvas* canvas);
-            void Draw();
+            MainMenu(graphics::Canvas* canvas);
+            void draw();
         private:
-            Widgets::Form Form;
+            widgets::Form mForm;
         };
     }
 }

@@ -3,15 +3,15 @@
 
 #include <Engine/Widgets/Widget.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Widgets 
+    namespace widgets 
     {
         class Button : public Widget
         {
         public:
-            Button(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
-            void Draw();
+            Button(graphics::Canvas* canvas, const graphics::Point& pos, const graphics::Point& size);
+            void draw();
         private:
         };
     }

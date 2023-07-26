@@ -2,11 +2,11 @@
 #define _Engine_Graphics_Point_hpp_
 
 #include <cstdint>
-#include <stddef.h>
+#include <cstddef>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Point
 		{

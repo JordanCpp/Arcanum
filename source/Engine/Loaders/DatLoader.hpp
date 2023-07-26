@@ -5,9 +5,9 @@
 #include <Engine/Readers/DatReader.hpp>
 #include <Engine/Formats/DataFile.hpp>
 
-namespace Engine
+namespace engine
 {
-	namespace Loaders
+	namespace loaders
 	{
 		class DatLoader
 		{
@@ -16,12 +16,12 @@ namespace Engine
 			{
 				Bytes = 1024 * 1024
 			};
-			DatLoader(Readers::DatList* datList);
-			bool getFile(const std::string& path, Formats::DataFile * dataFile);
+			DatLoader(readers::DatList* datList);
+			bool getFile(const std::string& path, formats::DataFile * dataFile);
 		private:
-			std::ifstream         Input;
-			std::vector<uint8_t>  Buffer;
-			Readers::DatList*     DatList;
+			std::ifstream         mInput;
+			std::vector<uint8_t>  mBuffer;
+			readers::DatList*     mDatList;
 		};
 	}
 }

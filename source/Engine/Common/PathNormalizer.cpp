@@ -1,6 +1,6 @@
 #include <Engine/Common/PathNormalizer.hpp>
 
-using namespace Engine::Common;
+using namespace engine::common;
 
 void PathNormalizer::normalize(char* path)
 {

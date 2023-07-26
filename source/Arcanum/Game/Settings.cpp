@@ -1,24 +1,24 @@
 #include <Arcanum/Game/Settings.hpp>
 
-using namespace Engine::Graphics;
-using namespace Arcanum::Game;
+using namespace engine::graphics;
+using namespace arcanum::game;
 
 const Point& Settings::getWindowSize()
 {
-	return WindowSize;
+	return mWindowSize;
 }
 
 void Settings::setWindowSize(const Point& size)
 {
-	WindowSize = size;
+	mWindowSize = size;
 }
 
 const std::string& Settings::getWindowTitle()
 {
-	return WindowTitle;
+	return mWindowTitle;
 }
 
 void Settings::setWindowTitle(const std::string& title)
 {
-	WindowTitle = title;
+	mWindowTitle = title;
 }

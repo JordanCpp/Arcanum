@@ -5,20 +5,20 @@
 #include <Engine/Loaders/DatLoader.hpp>
 #include <Engine/Formats/DataFile.hpp>
 
-namespace Engine
+namespace engine
 {
-    namespace Managers
+    namespace managers
     {
         class FileManager
         {
         public:
             FileManager();
-            Formats::DataFile* getFile(const std::string& path);
+            formats::DataFile* getFile(const std::string& path);
         private:
-            Readers::DatList   DatList;
-            Readers::DatReader DatReader;
-            Loaders::DatLoader DatLoader;
-            Formats::DataFile  Result;
+            readers::DatList   mDatList;
+            readers::DatReader mDatReader;
+            loaders::DatLoader mDatLoader;
+            formats::DataFile  mResult;
         };
     }
 }

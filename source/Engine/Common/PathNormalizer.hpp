@@ -3,9 +3,9 @@
 
 #include <string>
 
-namespace Engine
+namespace engine
 {
-	namespace Common
+	namespace common
 	{
 		class PathNormalizer
 		{

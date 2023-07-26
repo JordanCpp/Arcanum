@@ -1,56 +1,56 @@
 #include <Engine/Loaders/ArtLoader.hpp>
 
-using namespace Engine::Graphics;
-using namespace Engine::Loaders;
-using namespace Engine::Readers;
-using namespace Engine::Formats;
+using namespace engine::graphics;
+using namespace engine::loaders;
+using namespace engine::readers;
+using namespace engine::formats;
 
 void ArtLoader::Load(FileReader* fileReader)
 {
-	_File.LoadArt(fileReader);
+	mFile.loadArt(fileReader);
 }
 
 const Point& ArtLoader::getSize()
 {
-	return _Size;
+	return mSize;
 }
 
 const Point& ArtLoader::getOffset()
 {
-	return _Offset;
+	return mOffset;
 }
 
 const Point& ArtLoader::getDelta()
 {
-	return _Delta;
+	return mDelta;
 }
 
-uint8_t* ArtLoader::Pixels()
+uint8_t* ArtLoader::getPixels()
 {
-	return &_Pixels[0];
+	return &mPixels[0];
 }
 
-size_t ArtLoader::Frames()
+size_t ArtLoader::getFrames()
 {
-	return _File.frame_data.size();
+	return mFile.frame_data.size();
 }
 
-void ArtLoader::Frame(size_t index)
+void ArtLoader::frame(size_t index)
 {
-	size_t w = _File.frame_data[index].header.width;
-	size_t h = _File.frame_data[index].header.height;
-	_Size = Point(w, h);
+	size_t w = mFile.frame_data[index].header.width;
+	size_t h = mFile.frame_data[index].header.height;
+	mSize = Point(w, h);
 
-	size_t ow = _File.frame_data[index].header.c_x;
-	size_t oh = _File.frame_data[index].header.c_y;
-	_Offset = Point(ow, oh);
+	size_t ow = mFile.frame_data[index].header.c_x;
+	size_t oh = mFile.frame_data[index].header.c_y;
+	mOffset = Point(ow, oh);
 
-	size_t dw = _File.frame_data[index].header.d_x;
-	size_t dh = _File.frame_data[index].header.d_y;
-	_Delta = Point(dw, dh);
+	size_t dw = mFile.frame_data[index].header.d_x;
+	size_t dh = mFile.frame_data[index].header.d_y;
+	mDelta = Point(dw, dh);
 
-	_Pixels.clear();
-	_Pixels.resize(w * h * 4);
+	mPixels.clear();
+	mPixels.resize(w * h * 4);
 
 	for (size_t y = 0; y < h; y++)
 	{
@@ -58,9 +58,9 @@ void ArtLoader::Frame(size_t index)
 		{
 			size_t i = ((w * y) + x) * 4;
 
-			ArtTable& table = _File.palette_data[0];
+			ArtTable& table = mFile.palette_data[0];
 
-			uint8_t c = _File.frame_data[index].GetValue(x, y);
+			uint8_t c = mFile.frame_data[index].getValue(x, y);
 
 			uint8_t r = table.colors[c].r;
 			uint8_t g = table.colors[c].g;
@@ -68,17 +68,17 @@ void ArtLoader::Frame(size_t index)
 
 			if (c != 0)
 			{
-				_Pixels[i + 0] = r;
-				_Pixels[i + 1] = g;
-				_Pixels[i + 2] = b;
-				_Pixels[i + 3] = 255;
+				mPixels[i + 0] = r;
+				mPixels[i + 1] = g;
+				mPixels[i + 2] = b;
+				mPixels[i + 3] = 255;
 			}
 			else
 			{
-				_Pixels[index + 0] = 0;
-				_Pixels[index + 1] = 0;
-				_Pixels[index + 2] = 0;
-				_Pixels[index + 3] = 0;
+				mPixels[index + 0] = 0;
+				mPixels[index + 1] = 0;
+				mPixels[index + 2] = 0;
+				mPixels[index + 3] = 0;
 			}
 		}
 	}

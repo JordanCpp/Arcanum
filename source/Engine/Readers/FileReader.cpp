@@ -2,21 +2,22 @@
 #include  <string.h>
 
 using namespace Engine::Readers;
+using namespace Engine::Formats;
 
-void FileReader::open(Formats::DataFile* dataFile)
+void FileReader::open(DataFile* dataFile)
 {
-	DataFile = dataFile;
-	Offset = 0;
+	mDataFile = dataFile;
+	mOffset = 0;
 }
 
 void FileReader::close()
 {
-	DataFile = nullptr;
+	mDataFile = nullptr;
 }
 
 void FileReader::read(void* dest, size_t bytes)
 {
-	memcpy(dest, &DataFile->getContent()[Offset], bytes);
+	memcpy(dest, &mDataFile->getContent()[mOffset], bytes);
 
-	Offset += bytes;
+	mOffset += bytes;
 }

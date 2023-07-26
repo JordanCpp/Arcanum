@@ -11,11 +11,11 @@ namespace Engine
         {
         public:
             Widget(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
-            virtual void Draw() = 0;
+            virtual void draw() = 0;
         private:
-            Graphics::Canvas* Canvas;
-            Graphics::Point Pos;
-            Graphics::Point Size;
+            Graphics::Canvas* mCanvas;
+            Graphics::Point mPos;
+            Graphics::Point mSize;
         };
     }
 }

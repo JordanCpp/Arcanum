@@ -17,8 +17,8 @@ namespace Arcanum
 			const std::string& getWindowTitle();
 			void setWindowTitle(const std::string& title);
 		private:
-			Engine::Graphics::Point WindowSize;
-			std::string WindowTitle;
+			Engine::Graphics::Point mWindowSize;
+			std::string mWindowTitle;
 		};
 	}
 }

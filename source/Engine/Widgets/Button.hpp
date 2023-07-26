@@ -11,7 +11,7 @@ namespace Engine
         {
         public:
             Button(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
-            void Draw();
+            void draw();
         private:
         };
     }

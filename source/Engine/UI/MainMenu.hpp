@@ -11,9 +11,9 @@ namespace Engine
         {
         public:
             MainMenu(Graphics::Canvas* canvas);
-            void Draw();
+            void draw();
         private:
-            Widgets::Form Form;
+            Widgets::Form mForm;
         };
     }
 }

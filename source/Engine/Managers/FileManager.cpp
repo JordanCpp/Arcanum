@@ -8,13 +8,13 @@ using namespace Engine::Formats;
 using namespace Engine::Loaders;
 
 FileManager::FileManager() :
-	DatLoader(&DatList)
+	mDatLoader(&mDatList)
 {	
 	for (auto const& i : std::filesystem::directory_iterator{ std::filesystem::current_path()})
 	{
 		if (i.path().extension() == ".dat")
 		{
-			DatReader.Reset(i.path().generic_string(), DatList);
+			mDatReader.reset(i.path().generic_string(), mDatList);
 		}
 	}
 }
@@ -25,15 +25,15 @@ DataFile* FileManager::getFile(const std::string& path)
 
 	if (!std::filesystem::exists(pathFile))
 	{
-		if (!DatLoader.getFile(path, &Result))
+		if (!mDatLoader.getFile(path, &mResult))
 			throw std::runtime_error("Can't open file: " + path);
 	}
 	else
 	{
 		FileLoader loader;
 
-		loader.Reset(pathFile, &Result);
+		loader.reset(pathFile, &mResult);
 	}
 
-	return &Result;
+	return &mResult;
 }

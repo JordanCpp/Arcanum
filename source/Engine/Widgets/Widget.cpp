@@ -3,9 +3,9 @@
 using namespace Engine::Graphics;
 using namespace Engine::Widgets;
 
-Widget::Widget(Graphics::Canvas* canvas, const Point& pos, const Point& size) :
-	Canvas(canvas),
-	Pos(pos),
-	Size(size)
+Widget::Widget(Canvas* canvas, const Point& pos, const Point& size) :
+	mCanvas(canvas),
+	mPos(pos),
+	mSize(size)
 {
 }

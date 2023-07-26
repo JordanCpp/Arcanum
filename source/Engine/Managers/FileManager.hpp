@@ -15,10 +15,10 @@ namespace Engine
             FileManager();
             Formats::DataFile* getFile(const std::string& path);
         private:
-            Readers::DatList   DatList;
-            Readers::DatReader DatReader;
-            Loaders::DatLoader DatLoader;
-            Formats::DataFile  Result;
+            Readers::DatList   mDatList;
+            Readers::DatReader mDatReader;
+            Loaders::DatLoader mDatLoader;
+            Formats::DataFile  mResult;
         };
     }
 }

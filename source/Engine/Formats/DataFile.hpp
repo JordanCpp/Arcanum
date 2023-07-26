@@ -13,7 +13,7 @@ namespace Engine
         public:
             std::vector<uint8_t>& getContent();
         private:
-            std::vector<uint8_t> Content;
+            std::vector<uint8_t> mContent;
         };
     }
 }

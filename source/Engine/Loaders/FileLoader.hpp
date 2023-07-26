@@ -12,9 +12,9 @@ namespace Engine
         class FileLoader
         {
         public:
-            void Reset(const std::string& path, Formats::DataFile* dataFile);
+            void reset(const std::string& path, Formats::DataFile* dataFile);
         private:
-            std::ifstream Input;
+            std::ifstream mInput;
         };
     }
 }

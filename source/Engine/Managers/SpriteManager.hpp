@@ -17,10 +17,10 @@ namespace Engine
             SpriteManager(Graphics::Canvas* canvas, Managers::FileManager* fileManager, Loaders::ArtLoader * artLoader);
             std::shared_ptr<Graphics::Sprite> getSprite(const std::string& path);
         private:
-            Graphics::Canvas* Canvas;
-            Managers::FileManager* FileManager;
-            Loaders::ArtLoader* ArtLoader;
-            std::unordered_map<std::string, std::shared_ptr<Graphics::Sprite>> Sprites;
+            Graphics::Canvas* mCanvas;
+            Managers::FileManager* mFileManager;
+            Loaders::ArtLoader* mArtLoader;
+            std::unordered_map<std::string, std::shared_ptr<Graphics::Sprite>> mSprites;
         };
     }
 }

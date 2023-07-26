@@ -15,8 +15,8 @@ namespace Engine
             void close();
             void read(void* dest, size_t bytes);
         private:
-            size_t Offset;
-            Formats::DataFile* DataFile;
+            size_t mOffset;
+            Formats::DataFile* mDataFile;
         };
     }
 }

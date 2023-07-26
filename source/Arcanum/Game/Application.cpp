@@ -4,11 +4,11 @@
 using namespace Engine::Graphics;
 using namespace Arcanum::Game;
 
-Application::Application(Arcanum::Game::Settings* settings) :
-	Settings(settings),
-	Canvas(settings->getWindowSize(), settings->getWindowTitle()),
-	SpriteManager(&Canvas, &FileManager, &ArtLoader),
-	MainMenu(&Canvas)
+Application::Application(Settings* settings) :
+	mSettings(settings),
+	mCanvas(settings->getWindowSize(), settings->getWindowTitle()),
+	mSpriteManager(&mCanvas, &mFileManager, &mArtLoader),
+	mMainMenu(&mCanvas)
 
 {
 }
@@ -17,17 +17,17 @@ Application::~Application()
 {
 }
 
-void Application::Run()
+void Application::run()
 {
 	SDL_Event report = { 0 };
 
-	while (Canvas.getEvent(report))
+	while (mCanvas.getEvent(report))
 	{
-		MainMenu.Draw();
+		mMainMenu.draw();
 
-		SpriteManager.getSprite("art/scenery/engine.ART")->single()->draw(Point(0, 0));
-		SpriteManager.getSprite("art/scenery/Adv_engine.ART")->single()->draw(Point(300, 300));
-		SpriteManager.getSprite("art/scenery/cave_entrance.ART")->single()->draw(Point(450, 0));
-		SpriteManager.getSprite("art/monster/cow/cowuwxab.ART")->getImage(27)->draw(Point(50, 400));
+		mSpriteManager.getSprite("art/scenery/engine.ART")->single()->draw(Point(0, 0));
+		mSpriteManager.getSprite("art/scenery/Adv_engine.ART")->single()->draw(Point(300, 300));
+		mSpriteManager.getSprite("art/scenery/cave_entrance.ART")->single()->draw(Point(450, 0));
+		mSpriteManager.getSprite("art/monster/cow/cowuwxab.ART")->getImage(27)->draw(Point(50, 400));
 	}
 }

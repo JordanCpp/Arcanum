@@ -5,20 +5,20 @@ using namespace Arcanum::Game;
 
 const Point& Settings::getWindowSize()
 {
-	return WindowSize;
+	return mWindowSize;
 }
 
 void Settings::setWindowSize(const Point& size)
 {
-	WindowSize = size;
+	mWindowSize = size;
 }
 
 const std::string& Settings::getWindowTitle()
 {
-	return WindowTitle;
+	return mWindowTitle;
 }
 
 void Settings::setWindowTitle(const std::string& title)
 {
-	WindowTitle = title;
+	mWindowTitle = title;
 }

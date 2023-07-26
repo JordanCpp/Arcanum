@@ -4,40 +4,40 @@
 
 using namespace Engine::Readers;
 
-bool DatReader::Reset(const std::string& file, DatList& datList)
+bool DatReader::reset(const std::string& file, DatList& datList)
 {
-	if (File.is_open())
-		File.close();
+	if (mInput.is_open())
+		mInput.close();
 
-	File.open(file, std::ios::binary);
+	mInput.open(file, std::ios::binary);
 
-	if (File.is_open())
+	if (mInput.is_open())
 	{
 		int treesubs   = 0;	
 		int filestotal = 0;
 
-		File.seekg(-0x1Cl, std::ios::end);
-		File.seekg(16, std::ios::cur);
-		File.seekg(4, std::ios::cur);
-		File.seekg(4, std::ios::cur);
-		File.read((char*)&treesubs, 0x04);
-		File.seekg(-treesubs, std::ios::end);
-		File.read((char*)&filestotal, 0x04);
+		mInput.seekg(-0x1Cl, std::ios::end);
+		mInput.seekg(16, std::ios::cur);
+		mInput.seekg(4, std::ios::cur);
+		mInput.seekg(4, std::ios::cur);
+		mInput.read((char*)&treesubs, 0x04);
+		mInput.seekg(-treesubs, std::ios::end);
+		mInput.read((char*)&filestotal, 0x04);
 
 		for (int i = 1; i <= filestotal; i++)
 		{
 			DatItem item;
 
-			File.read((char*)&item.NameSize, 0x04);
-			File.read((char*)&item.Name    , item.NameSize);
+			mInput.read((char*)&item.NameSize, 0x04);
+			mInput.read((char*)&item.Name    , item.NameSize);
 
-			PathNormalizer.normalize(item.Name);
+			mPathNormalizer.normalize(item.Name);
 
-			File.read((char*)&item.Unknown1  , 0x04);
-			File.read((char*)&item.Type      , 0x04);
-			File.read((char*)&item.RealSize  , 0x04);
-			File.read((char*)&item.PackedSize, 0x04);
-			File.read((char*)&item.Offset    , 0x04);
+			mInput.read((char*)&item.Unknown1  , 0x04);
+			mInput.read((char*)&item.Type      , 0x04);
+			mInput.read((char*)&item.RealSize  , 0x04);
+			mInput.read((char*)&item.PackedSize, 0x04);
+			mInput.read((char*)&item.Offset    , 0x04);
 			strcpy(item.DatFile, file.c_str());
 
 			auto j = datList.List.find(item.Name);
@@ -48,7 +48,7 @@ bool DatReader::Reset(const std::string& file, DatList& datList)
 				strcpy(j->second.DatFile, file.c_str());
 		}
 
-		File.close();
+		mInput.close();
 
 		return true;
 	}

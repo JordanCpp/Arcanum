@@ -76,18 +76,18 @@ namespace Engine
 			void Reset();
 			bool EOD();
 
-			size_t Index(int x, int y);
+			size_t index(int x, int y);
 
-			ArtFrameHeader& GetHeader() { return header; }
-			void LoadHeader(Readers::FileReader* source);
-			void SaveHeader(std::ofstream& dest);
+			ArtFrameHeader& getHeader() { return header; }
+			void loadHeader(Readers::FileReader* source);
+			void saveHeader(std::ofstream& dest);
 
-			void Load(Readers::FileReader* source);
+			void load(Readers::FileReader* source);
 
-			uint8_t GetValue(int x, int y);
-			void SetValue(int x, int y, uint8_t ch);
-			void SetSize(int w, int h);
-			void Decode();
+			uint8_t getValue(int x, int y);
+			void setValue(int x, int y, uint8_t ch);
+			void setSize(int w, int h);
+			void decode();
 		};
 
 		struct ArtFile
@@ -101,8 +101,7 @@ namespace Engine
 			int key_frame = { 0 };
 			bool animated = { 0 };
 
-			void Reset();
-			void LoadArt(Readers::FileReader* source);
+			void loadArt(Readers::FileReader* source);
 		};
 	}
 }

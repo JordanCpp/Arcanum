@@ -3,17 +3,17 @@
 using namespace Engine::Graphics;
 using namespace Engine::Widgets;
 
-Form::Form(Graphics::Canvas* canvas, const Point& pos, const Point& size) :
+Form::Form(Canvas* canvas, const Point& pos, const Point& size) :
 	Widget(canvas, pos, size)
 {
 }
 
-void Form::Draw()
+void Form::draw()
 {
-	Widgets.Draw();
+	mWidgets.draw();
 }
 
-void Form::Add(Widget* widget)
+void Form::add(Widget* widget)
 {
-	Widgets.Add(widget);
+	mWidgets.add(widget);
 }

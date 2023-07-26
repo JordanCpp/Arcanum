@@ -16,14 +16,14 @@ namespace Arcanum
 		public:
 			Application(Settings* settings);
 			~Application();
-			void Run();
+			void run();
 		private:
-			Engine::Loaders::ArtLoader ArtLoader;
-			Settings* Settings;
-			Engine::Graphics::Canvas Canvas;
-			Engine::Managers::FileManager FileManager;
-			Engine::Managers::SpriteManager SpriteManager;
-			Engine::UI::MainMenu MainMenu;
+			Engine::Loaders::ArtLoader mArtLoader;
+			Settings* mSettings;
+			Engine::Graphics::Canvas mCanvas;
+			Engine::Managers::FileManager mFileManager;
+			Engine::Managers::SpriteManager mSpriteManager;
+			Engine::UI::MainMenu mMainMenu;
 		};
 	}
 }

@@ -37,7 +37,7 @@ void ArtFrame::Reset()
 	px = py = 0;
 }
 
-size_t ArtFrame::Index(int x, int y)
+size_t ArtFrame::index(int x, int y)
 {
 	return ((header.width * y) + x);
 }
@@ -48,40 +48,40 @@ bool ArtFrame::EOD()
 	return true;
 }
 
-void ArtFrame::LoadHeader(FileReader* source)
+void ArtFrame::loadHeader(FileReader* source)
 {
 	source->read(reinterpret_cast<char*>(&header), sizeof(header));
 }
 
-void ArtFrame::SaveHeader(std::ofstream& dest)
+void ArtFrame::saveHeader(std::ofstream& dest)
 {
 	dest.write(reinterpret_cast<char*>(&header), sizeof(header));
 }
 
-void ArtFrame::Load(FileReader* source)
+void ArtFrame::load(FileReader* source)
 {
 	data.resize(header.size);
 	source->read(&data[0], header.size);
 }
 
-uint8_t ArtFrame::GetValue(int x, int y)
+uint8_t ArtFrame::getValue(int x, int y)
 {
-	return pixels[Index(x, y)];
+	return pixels[index(x, y)];
 }
 
-void ArtFrame::SetValue(int x, int y, uint8_t ch)
+void ArtFrame::setValue(int x, int y, uint8_t ch)
 {
-	pixels[Index(x, y)] = ch;
+	pixels[index(x, y)] = ch;
 }
 
-void ArtFrame::SetSize(int w, int h)
+void ArtFrame::setSize(int w, int h)
 {
 	header.width = w;
 	header.height = h;
 	pixels.resize(header.height * header.width);
 }
 
-void ArtFrame::Decode()
+void ArtFrame::decode()
 {
 	pixels.resize(header.height * header.width);
 
@@ -98,7 +98,7 @@ void ArtFrame::Decode()
 				while (to_copy--)
 				{
 					p++;
-					pixels[Index(px, py)] = data[p];
+					pixels[index(px, py)] = data[p];
 					Inc();
 				}
 			}
@@ -110,7 +110,7 @@ void ArtFrame::Decode()
 
 				while (to_clone--)
 				{
-					pixels[Index(px, py)] = src;
+					pixels[index(px, py)] = src;
 					Inc();
 				}
 			}
@@ -120,13 +120,13 @@ void ArtFrame::Decode()
 	{
 		for (int p = 0; p < static_cast<int>(header.size); p++)
 		{
-			pixels[Index(px, py)] = data[p];
+			pixels[index(px, py)] = data[p];
 			Inc();
 		}
 	}
 }
 
-void ArtFile::LoadArt(FileReader* source)
+void ArtFile::loadArt(FileReader* source)
 {
 	frame_data.clear();
 
@@ -156,13 +156,13 @@ void ArtFile::LoadArt(FileReader* source)
 	for (int i = 0; i < frames; i++)
 	{
 		frame_data.push_back(ArtFrame());
-		frame_data.back().LoadHeader(source);
+		frame_data.back().loadHeader(source);
 	}
 
 	for (auto &af : frame_data)
 	{
-		af.Load(source);
-		af.Decode();
+		af.load(source);
+		af.decode();
 	}
 
 	source->close();

@@ -11,10 +11,10 @@ namespace Engine
         {
         public:
             Form(Graphics::Canvas* canvas, const Graphics::Point& pos, const Graphics::Point& size);
-            void Draw();
-            void Add(Widget* widget);
+            void draw();
+            void add(Widget* widget);
         private:
-            Container Widgets;
+            Container mWidgets;
         };
     }
 }

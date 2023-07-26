@@ -2,15 +2,15 @@
 
 using namespace Engine::Widgets;
 
-void Container::Add(Widget* widget)
+void Container::add(Widget* widget)
 {
-	Widgets.push_back(widget);
+	mWidgets.push_back(widget);
 }
 
-void Container::Draw()
+void Container::draw()
 {
-	for (size_t i = 0; i < Widgets.size(); i++)
+	for (size_t i = 0; i < mWidgets.size(); i++)
 	{
-		Widgets[i]->Draw();
+		mWidgets[i]->draw();
 	}
 }

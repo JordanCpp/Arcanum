@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
         settings.setWindowTitle("Arcanum project");
 
         Application application(&settings);
-        application.Run();
+        application.run();
     }
     catch (const char* msg) 
     {

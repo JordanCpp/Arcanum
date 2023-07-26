@@ -3,12 +3,12 @@
 using namespace Engine::Graphics;
 using namespace Engine::UI;
 
-MainMenu::MainMenu(Graphics::Canvas* canvas) :
-	Form(canvas, Point(0, 0), canvas->getSize())
+MainMenu::MainMenu(Canvas* canvas) :
+	mForm(canvas, Point(0, 0), canvas->getSize())
 {
 }
 
-void MainMenu::Draw()
+void MainMenu::draw()
 {
-	Form.Draw();
+	mForm.draw();
 }

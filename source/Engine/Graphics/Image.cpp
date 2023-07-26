@@ -4,10 +4,10 @@
 using namespace Engine::Graphics;
 
 Image::Image(Graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :
-	Canvas(canvas),
-    Size(size),
-    Offset(offset),
-    Delta(delta)
+	mCanvas(canvas),
+    mSize(size),
+    mOffset(offset),
+    mDelta(delta)
 {
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
     const uint32_t R_MASK = 0xff000000;
@@ -26,9 +26,9 @@ Image::Image(Graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const
     if (!surface)
         throw std::runtime_error(SDL_GetError());
          
-	Texture = SDL_CreateTextureFromSurface(Canvas->getRender(), surface);
+	mTexture = SDL_CreateTextureFromSurface(mCanvas->getRender(), surface);
 
-    if (!Texture)
+    if (!mTexture)
         throw std::runtime_error(SDL_GetError());
 
     SDL_FreeSurface(surface);
@@ -36,22 +36,22 @@ Image::Image(Graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const
 
 Image::~Image()
 {
-	SDL_DestroyTexture(Texture);
+	SDL_DestroyTexture(mTexture);
 }
 
 const Point& Image::getSize()
 {
-    return Size;
+    return mSize;
 }
 
 const Point& Image::getOffset()
 {
-    return Offset;
+    return mOffset;
 }
 
 const Point& Image::getDelta()
 {
-    return Delta;
+    return mDelta;
 }
 
 void Image::draw(const Point& pos)
@@ -60,8 +60,8 @@ void Image::draw(const Point& pos)
 
     rt.x = (int)pos.X;
     rt.y = (int)pos.Y;
-    rt.w = (int)Size.X;
-    rt.h = (int)Size.Y;
+    rt.w = (int)mSize.X;
+    rt.h = (int)mSize.Y;
 
-    SDL_RenderCopy(Canvas->getRender(), Texture, nullptr, &rt);
+    SDL_RenderCopy(mCanvas->getRender(), mTexture, nullptr, &rt);
 }

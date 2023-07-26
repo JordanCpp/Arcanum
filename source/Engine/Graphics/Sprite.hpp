@@ -17,7 +17,7 @@ namespace Engine
 			Image* single();
 			size_t getFrames();
 		private:
-			std::vector<Image*> Images;
+			std::vector<Image*> mImages;
 		};
 	}
 }

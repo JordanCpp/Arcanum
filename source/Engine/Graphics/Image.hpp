@@ -17,11 +17,11 @@ namespace Engine
 			const Point& getDelta();
 			void draw(const Point& pos);
 		private:
-			Graphics::Canvas* Canvas;
-			SDL_Texture* Texture;
-			Point Size;
-			Point Offset;
-			Point Delta;
+			Graphics::Canvas* mCanvas;
+			SDL_Texture* mTexture;
+			Point mSize;
+			Point mOffset;
+			Point mDelta;
 		};
 	}
 }

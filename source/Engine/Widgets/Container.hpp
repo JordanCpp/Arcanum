@@ -11,10 +11,10 @@ namespace Engine
         class Container
         {
         public:
-            void Add(Widget* widget);
-            void Draw();
+            void add(Widget* widget);
+            void draw();
         private:
-            std::vector<Widget*> Widgets;
+            std::vector<Widget*> mWidgets;
         };
     }
 }

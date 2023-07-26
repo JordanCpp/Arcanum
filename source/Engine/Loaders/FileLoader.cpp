@@ -4,24 +4,24 @@
 using namespace Engine::Loaders;
 using namespace Engine::Formats;
 
-void FileLoader::Reset(const std::string& path, DataFile* dataFile)
+void FileLoader::reset(const std::string& path, DataFile* dataFile)
 {
-    Input.open(path.c_str(), std::ios::binary);
+    mInput.open(path.c_str(), std::ios::binary);
 
-    if (!Input.is_open())
+    if (!mInput.is_open())
         throw std::runtime_error("Not found file: " + path);
 
-    Input.seekg(0, std::ios::end);
+    mInput.seekg(0, std::ios::end);
 
-    std::streampos length(Input.tellg());
+    std::streampos length(mInput.tellg());
 
-    Input.seekg(0, std::ios::beg);
+    mInput.seekg(0, std::ios::beg);
 
     size_t bytes = (size_t)length;
 
     dataFile->getContent().resize(bytes);
 
-    Input.read((char*)dataFile->getContent().data(), bytes);
+    mInput.read((char*)dataFile->getContent().data(), bytes);
 
-    Input.close();
+    mInput.close();
 }

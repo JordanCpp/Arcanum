@@ -19,9 +19,9 @@ namespace Engine
 			DatLoader(Readers::DatList* datList);
 			bool getFile(const std::string& path, Formats::DataFile * dataFile);
 		private:
-			std::ifstream         Input;
-			std::vector<uint8_t>  Buffer;
-			Readers::DatList*     DatList;
+			std::ifstream         mInput;
+			std::vector<uint8_t>  mBuffer;
+			Readers::DatList*     mDatList;
 		};
 	}
 }

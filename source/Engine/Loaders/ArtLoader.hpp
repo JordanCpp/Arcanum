@@ -16,15 +16,15 @@ namespace Engine
 			const Graphics::Point& getSize();
 			const Graphics::Point& getOffset();
 			const Graphics::Point& getDelta();
-			uint8_t* Pixels();
-			size_t Frames();
-			void Frame(size_t index);
+			uint8_t* getPixels();
+			size_t getFrames();
+			void frame(size_t index);
 		private:
-			Formats::ArtFile _File;
-			Graphics::Point _Size;
-			Graphics::Point _Offset;
-			Graphics::Point _Delta;
-			std::vector<uint8_t> _Pixels;
+			Formats::ArtFile mFile;
+			Graphics::Point mSize;
+			Graphics::Point mOffset;
+			Graphics::Point mDelta;
+			std::vector<uint8_t> mPixels;
 		};
 	}
 }

@@ -44,10 +44,10 @@ namespace Engine
         class DatReader
         {
         public:
-            bool Reset(const std::string& file, DatList& datList);
+            bool reset(const std::string& file, DatList& datList);
         private:
-            Common::PathNormalizer PathNormalizer;
-            std::ifstream File;
+            Common::PathNormalizer mPathNormalizer;
+            std::ifstream mInput;
         };
     }
 }

@@ -2,6 +2,7 @@
 #define _Engine_Graphics_Point_hpp_
 
 #include <cstdint>
+#include <stddef.h>
 
 namespace Engine
 {

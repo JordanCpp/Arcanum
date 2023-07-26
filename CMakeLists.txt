@@ -38,7 +38,7 @@ else()
 endif()
 
 if (APPLE)
-  target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
+  target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${ZLIB_LIBRARY})
 else()
   target_link_libraries(${PROJECT_NAME} SDL2main SDL2 zlib)
 endif()

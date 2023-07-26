@@ -1,9 +1,7 @@
-#ifndef _Engine_Readers_DatReader_hpp_
-#define _Engine_Readers_DatReader_hpp_
+#ifndef ENGINE_READERS_DATREADER_HPP
+#define ENGINE_READERS_DATREADER_HPP
 
 #include <fstream>
-#include <string>
-#include <vector>
 #include <unordered_map>
 #include <Engine/Common/PathNormalizer.hpp>
 

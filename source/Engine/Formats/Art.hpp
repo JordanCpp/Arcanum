@@ -1,14 +1,13 @@
-/* ArtConverter by Alexey Stremov https://github.com/AxelStrem/ArtConverter/blob/master/artconverter.cpp
-   Refactored for OpenArcanum https://github.com/OpenArcanum/artviewer */
+/* 
+     ArtConverter by Alexey Stremov https://github.com/AxelStrem/ArtConverter/blob/master/artconverter.cpp
+         Refactored for OpenArcanum https://github.com/OpenArcanum/artviewer 
+*/
 
-#ifndef _Arcanum_Formats_Art_hpp_
-#define _Arcanum_Formats_Art_hpp_
-
-#include <string>
-#include <vector>
-#include <fstream>
+#ifndef ARCANUM_FORMATS_ART_HPP
+#define ARCANUM_FORMATS_ART_HPP
 
 #include <Engine/Readers/FileReader.hpp>
+#include <string>
 
 namespace engine
 {
@@ -80,7 +79,6 @@ namespace engine
 
 			ArtFrameHeader& getHeader() { return header; }
 			void loadHeader(readers::FileReader* source);
-			void saveHeader(std::ofstream& dest);
 
 			void load(readers::FileReader* source);
 

@@ -1,5 +1,5 @@
-#ifndef _Engine_Loaders_FileLoader_hpp_
-#define _Engine_Loaders_FileLoader_hpp_
+#ifndef ENGINE_LOADERS_FILELOADER_HPP
+#define ENGINE_LOADERS_FILELOADER_HPP
 
 #include <fstream>
 #include <string>

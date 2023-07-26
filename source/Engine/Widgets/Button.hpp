@@ -1,5 +1,5 @@
-#ifndef _Engine_Widgets_Button_hpp_
-#define _Engine_Widgets_Button_hpp_
+#ifndef ENGINE_WIDGETS_BUTTON_HPP
+#define ENGINE_WIDGETS_BUTTON_HPP
 
 #include <Engine/Widgets/Widget.hpp>
 
@@ -10,7 +10,7 @@ namespace engine
         class Button : public Widget
         {
         public:
-            Button(graphics::Canvas* canvas, const graphics::Point& pos, const graphics::Point& size);
+            Button(graphics::Canvas* canvas, const math::Point& pos, const math::Point& size);
             void draw();
         private:
         };

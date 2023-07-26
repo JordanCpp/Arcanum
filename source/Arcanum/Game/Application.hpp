@@ -1,9 +1,7 @@
-#ifndef _Arcanum_Game_Application_hpp_
-#define _Arcanum_Game_Application_hpp_
+#ifndef ARCANUM_GAME_APPLICATION_HPP
+#define ARCANUM_GAME_APPLICATION_HPP
 
-#include <Engine/Graphics/Canvas.hpp>
 #include <Arcanum/Game/Settings.hpp>
-#include <Engine/Managers/FileManager.hpp>
 #include <Engine/UI/MainMenu.hpp>
 #include <Engine/Managers/SpriteManager.hpp>
 

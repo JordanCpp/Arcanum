@@ -1,5 +1,5 @@
-#ifndef _Engine_Formats_DataFile_hpp_
-#define _Engine_Formats_DataFile_hpp_
+#ifndef ENGINE_FORMATS_DATAFILE_HPP
+#define ENGINE_FORMATS_DATAFILE_HPP
 
 #include <vector>
 #include <cstdint>

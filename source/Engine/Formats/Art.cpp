@@ -53,11 +53,6 @@ void ArtFrame::loadHeader(FileReader* source)
 	source->read(reinterpret_cast<char*>(&header), sizeof(header));
 }
 
-void ArtFrame::saveHeader(std::ofstream& dest)
-{
-	dest.write(reinterpret_cast<char*>(&header), sizeof(header));
-}
-
 void ArtFrame::load(FileReader* source)
 {
 	data.resize(header.size);

@@ -1,10 +1,9 @@
-#ifndef _Engine_Graphics_Canvas_hpp_
-#define _Engine_Graphics_Canvas_hpp_
+#ifndef ENGINE_GRAPHICS_CANVAS_HPP
+#define ENGINE_GRAPHICS_CANVAS_HPP
 
 #include <SDL.h>
-#include <cstdint>
 #include <string>
-#include <Engine/Graphics/Point.hpp>
+#include <Engine/Math/Point.hpp>
 
 namespace engine
 {
@@ -13,16 +12,16 @@ namespace engine
 		class Canvas
 		{
 		public:
-			Canvas(const Point& size, const std::string& title);
+			Canvas(const math::Point& size, const std::string& title);
 			~Canvas();
-			const Point getSize();
+			const math::Point getSize();
 			SDL_Renderer* getRender();
 			bool getEvent(SDL_Event& dest);
 		private:
 			bool mRunning;
 			SDL_Window* mWindow;
 			SDL_Renderer* mRender;
-			Point mSize;
+			math::Point mSize;
 		};
 	}
 }

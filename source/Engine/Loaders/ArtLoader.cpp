@@ -1,6 +1,6 @@
 #include <Engine/Loaders/ArtLoader.hpp>
 
-using namespace engine::graphics;
+using namespace engine::math;
 using namespace engine::loaders;
 using namespace engine::readers;
 using namespace engine::formats;

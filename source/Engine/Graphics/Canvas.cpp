@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace engine::math;
 using namespace engine::graphics;
 
 Canvas::Canvas(const Point& size, const std::string& title) :

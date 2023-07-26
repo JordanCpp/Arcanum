@@ -1,9 +1,8 @@
-#ifndef _Engine_Managers_FileManager_hpp_
-#define _Engine_Managers_FileManager_hpp_
+#ifndef ENGINE_MANAGERS_FILEMANAGER_HPP
+#define ENGINE_MANAGERS_FILEMANAGER_HPP
 
 #include <Engine/Readers/DatReader.hpp>
 #include <Engine/Loaders/DatLoader.hpp>
-#include <Engine/Formats/DataFile.hpp>
 
 namespace engine
 {

@@ -1,5 +1,5 @@
-#ifndef _Engine_Common_PathNormalizer_hpp_
-#define _Engine_Common_PathNormalizer_hpp_
+#ifndef ENGINE_COMMON_PATHNORMALIZER_HPP
+#define ENGINE_COMMON_PATHNORMALIZER_HPP
 
 #include <string>
 

@@ -1,5 +1,5 @@
-#ifndef _Engine_UI_MainMenu_hpp_
-#define _Engine_UI_MainMenu_hpp_
+#ifndef ENGINE_UI_MAINMENU_HPP
+#define ENGINE_UI_MAINMENU_HPP
 
 #include <Engine/Widgets/Form.hpp>
 

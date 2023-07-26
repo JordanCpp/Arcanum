@@ -1,5 +1,6 @@
 #include <Engine/UI/MainMenu.hpp>
 
+using namespace engine::math;
 using namespace engine::graphics;
 using namespace engine::ui;
 

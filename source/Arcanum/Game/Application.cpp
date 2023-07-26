@@ -1,6 +1,7 @@
 #include <Arcanum/Game/Application.hpp>
 #include <iostream>
 
+using namespace engine::math;
 using namespace engine::graphics;
 using namespace arcanum::game;
 

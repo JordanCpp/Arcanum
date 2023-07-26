@@ -1,5 +1,6 @@
 #include <Engine/Widgets/Form.hpp>
 
+using namespace engine::math;
 using namespace engine::graphics;
 using namespace engine::widgets;
 

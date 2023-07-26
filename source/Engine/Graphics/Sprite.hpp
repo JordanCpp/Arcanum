@@ -1,5 +1,5 @@
-#ifndef _Engine_Graphics_Sprite_hpp_
-#define _Engine_Graphics_Sprite_hpp_
+#ifndef ENGINE_GRAPHICS_SPRITE_HPP
+#define ENGINE_GRAPHICS_SPRITE_HPP
 
 #include <Engine/Graphics/Image.hpp>
 #include <vector>

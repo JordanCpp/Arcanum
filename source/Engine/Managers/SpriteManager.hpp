@@ -1,5 +1,5 @@
-#ifndef _Engine_Managers_SpriteManager_hpp_
-#define _Engine_Managers_SpriteManager_hpp_
+#ifndef ENGINE_MANAGERS_SPRITEMANAGER_HPP
+#define ENGINE_MANAGERS_SPRITEMANAGER_HPP
 
 #include <Engine/Graphics/Sprite.hpp>
 #include <Engine/Managers/FileManager.hpp>

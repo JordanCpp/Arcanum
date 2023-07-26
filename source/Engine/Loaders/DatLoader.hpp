@@ -1,5 +1,5 @@
-#ifndef _Engine_Loaders_DatLoader_hpp_
-#define _Engine_Loaders_DatLoader_hpp_
+#ifndef ENGINE_LOADERS_DATLOADER_HPP
+#define ENGINE_LOADERS_DATLOADER_HPP
 
 #include <fstream>
 #include <Engine/Readers/DatReader.hpp>

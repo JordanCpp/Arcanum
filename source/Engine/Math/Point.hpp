@@ -1,11 +1,11 @@
-#ifndef _Engine_Graphics_Point_hpp_
-#define _Engine_Graphics_Point_hpp_
+#ifndef ENGINE_MATH_POINT_HPP
+#define ENGINE_MATH_POINT_HPP
 
 #include <cstddef>
 
 namespace engine
 {
-	namespace graphics
+	namespace math
 	{
 		class Point
 		{

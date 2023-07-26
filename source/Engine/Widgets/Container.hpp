@@ -1,5 +1,5 @@
-#ifndef _Engine_Widgets_Container_hpp_
-#define _Engine_Widgets_Container_hpp_
+#ifndef ENGINE_WIDGETS_CONTAINER_HPP
+#define ENGINE_WIDGETS_CONTAINER_HPP
 
 #include <Engine/Widgets/Widget.hpp>
 #include <vector>

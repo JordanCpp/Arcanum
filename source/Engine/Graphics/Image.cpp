@@ -1,6 +1,7 @@
 #include <Engine/Graphics/Image.hpp>
 #include <stdexcept>
 
+using namespace engine::math;
 using namespace engine::graphics;
 
 Image::Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :

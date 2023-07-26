@@ -1,5 +1,5 @@
-#ifndef _Engine_Readers_FileReader_hpp_
-#define _Engine_Readers_FileReader_hpp_
+#ifndef ENGINE_READERS_FILEREADER_HPP
+#define ENGINE_READERS_FILEREADER_HPP
 
 #include <cstddef>
 #include <Engine/Formats/DataFile.hpp>

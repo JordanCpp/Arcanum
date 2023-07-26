@@ -1,7 +1,7 @@
 #ifndef _Engine_Readers_FileReader_hpp_
 #define _Engine_Readers_FileReader_hpp_
 
-#include <cstdint>
+#include <cstddef>
 #include <Engine/Formats/DataFile.hpp>
 
 namespace engine

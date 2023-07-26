@@ -17,5 +17,5 @@ void PathNormalizer::normalize(char* path)
 
 void PathNormalizer::normalize(std::string& path)
 {
-	normalize((char*)path[0]);
+	normalize(path.data());
 }

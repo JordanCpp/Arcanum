@@ -1,8 +1,8 @@
 #include <Arcanum/Game/Application.hpp>
 #include <iostream>
 
-using namespace Arcanum::Game;
-using namespace Engine::Graphics;
+using namespace arcanum::game;
+using namespace engine::graphics;
 
 int main(int argc, char* argv[])
 {
@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
         settings.setWindowTitle("Arcanum project");
 
         Application application(&settings);
-        application.Run();
+        application.run();
     }
     catch (const char* msg) 
     {

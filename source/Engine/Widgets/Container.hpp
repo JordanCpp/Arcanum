@@ -4,17 +4,17 @@
 #include <Engine/Widgets/Widget.hpp>
 #include <vector>
 
-namespace Engine
+namespace engine
 {
-    namespace Widgets
+    namespace widgets
     {
         class Container
         {
         public:
-            void Add(Widget* widget);
-            void Draw();
+            void add(Widget* widget);
+            void draw();
         private:
-            std::vector<Widget*> Widgets;
+            std::vector<Widget*> mWidgets;
         };
     }
 }

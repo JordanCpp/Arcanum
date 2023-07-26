@@ -4,21 +4,21 @@
 #include <string>
 #include <Engine/Graphics/Point.hpp>
 
-namespace Arcanum
+namespace arcanum
 {
-	namespace Game
+	namespace game
 	{
 		class Settings
 		{
 		public:
-			const Engine::Graphics::Point& getWindowSize();
-			void setWindowSize(const Engine::Graphics::Point& size);
+			const engine::graphics::Point& getWindowSize();
+			void setWindowSize(const engine::graphics::Point& size);
 
 			const std::string& getWindowTitle();
 			void setWindowTitle(const std::string& title);
 		private:
-			Engine::Graphics::Point WindowSize;
-			std::string WindowTitle;
+			engine::graphics::Point mWindowSize;
+			std::string mWindowTitle;
 		};
 	}
 }

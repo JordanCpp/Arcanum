@@ -7,23 +7,23 @@
 #include <Engine/UI/MainMenu.hpp>
 #include <Engine/Managers/SpriteManager.hpp>
 
-namespace Arcanum
+namespace arcanum
 {
-	namespace Game
+	namespace game
 	{
 		class Application
 		{
 		public:
 			Application(Settings* settings);
 			~Application();
-			void Run();
+			void run();
 		private:
-			Engine::Loaders::ArtLoader ArtLoader;
-			Settings* Settings;
-			Engine::Graphics::Canvas Canvas;
-			Engine::Managers::FileManager FileManager;
-			Engine::Managers::SpriteManager SpriteManager;
-			Engine::UI::MainMenu MainMenu;
+			engine::loaders::ArtLoader mArtLoader;
+			Settings* mSettings;
+			engine::graphics::Canvas mCanvas;
+			engine::managers::FileManager mFileManager;
+			engine::managers::SpriteManager mSpriteManager;
+			engine::ui::MainMenu mMainMenu;
 		};
 	}
 }

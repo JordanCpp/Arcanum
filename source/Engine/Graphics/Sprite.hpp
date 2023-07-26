@@ -4,9 +4,9 @@
 #include <Engine/Graphics/Image.hpp>
 #include <vector>
 
-namespace Engine
+namespace engine
 {
-	namespace Graphics
+	namespace graphics
 	{
 		class Sprite
 		{
@@ -17,7 +17,7 @@ namespace Engine
 			Image* single();
 			size_t getFrames();
 		private:
-			std::vector<Image*> Images;
+			std::vector<Image*> mImages;
 		};
 	}
 }

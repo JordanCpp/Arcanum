@@ -60,14 +60,19 @@ const Point& Image::getDelta()
     return mDelta;
 }
 
-void Image::draw(const Point& pos)
+void Image::draw(const Point& dstPos, const Point& dstSize)
 {
     SDL_Rect rt;
 
-    rt.x = (int)pos.X;
-    rt.y = (int)pos.Y;
-    rt.w = (int)mSize.X;
-    rt.h = (int)mSize.Y;
+    rt.x = (int)dstPos.X;
+    rt.y = (int)dstPos.Y;
+    rt.w = (int)dstSize.X;
+    rt.h = (int)dstSize.Y;
 
     SDL_RenderCopy(mRender->getRender(), mTexture, nullptr, &rt);
+}
+
+void Image::draw(const Point& pos)
+{
+    draw(pos, getSize());
 }

@@ -14,6 +14,7 @@ namespace arcanum
 			~Render();
 			SDL_Renderer* getRender();
 			const math::Point getSize();
+			void Clear();
 			void Draw();
 		private:
 			Window* mWindow;

@@ -4,14 +4,14 @@ using namespace arcanum::math;
 using namespace arcanum::objects;
 using namespace arcanum::graphics;
 
-const Point& Tile::getSize()
+const Point& Tile::getPos()
 {
-	return mSize;
+	return mPos;
 }
 
-void Tile::setSize(const Point& value)
+void Tile::setPos(const Point& value)
 {
-	mSize = value;
+	mPos = value;
 }
 
 const std::shared_ptr<Sprite> Tile::getSprite()
@@ -19,7 +19,7 @@ const std::shared_ptr<Sprite> Tile::getSprite()
 	return mBody;
 }
 
-void Tile::setSize(std::shared_ptr<Sprite> value)
+void Tile::setSprite(std::shared_ptr<Sprite> value)
 {
 	mBody = value;
 }

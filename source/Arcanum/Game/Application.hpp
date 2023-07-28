@@ -4,6 +4,7 @@
 #include <Arcanum/Game/Settings.hpp>
 #include <Arcanum/UI/MainMenu.hpp>
 #include <Arcanum/Managers/SpriteManager.hpp>
+#include <Arcanum/Objects/Map.hpp>
 
 namespace arcanum
 {
@@ -21,6 +22,8 @@ namespace arcanum
 			graphics::Render mRender;
 			managers::FileManager mFileManager;
 			managers::SpriteManager mSpriteManager;
+			objects::MapData mMapData;
+			objects::Map mMap;
 			ui::MainMenu mMainMenu;
 		};
 	}

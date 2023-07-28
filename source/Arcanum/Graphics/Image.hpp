@@ -16,6 +16,7 @@ namespace arcanum
 			const math::Point& getSize();
 			const math::Point& getOffset();
 			const math::Point& getDelta();
+			void draw(const math::Point& dstPos, const math::Point& dstSize);
 			void draw(const math::Point& pos);
 		private:
 			graphics::Render* mRender;

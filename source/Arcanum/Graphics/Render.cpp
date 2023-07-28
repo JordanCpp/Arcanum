@@ -11,6 +11,8 @@ Render::Render(Window* window) :
 
     if (!mRender)
         throw std::runtime_error(SDL_GetError());
+
+    SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
 }
 
 Render::~Render()
@@ -26,6 +28,11 @@ SDL_Renderer* Render::getRender()
 const Point Render::getSize()
 {
     return mWindow->getSize();
+}
+
+void Render::Clear()
+{
+    SDL_RenderClear(mRender);
 }
 
 void Render::Draw()

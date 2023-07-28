@@ -48,19 +48,24 @@ void Map::DrawTiles(const Point& dstPos, float scale)
 
 void Map::DrawSceneries(const Point& dstPos, float scale)
 {
-	for (size_t i = 0; i < mMapData->getSceneries().size(); i++)
+	Point pos;
+
+	for (size_t i = 0; i < mMapData->getTiles().size(); i++)
 	{
-		Scenery* object = &mMapData->getSceneries()[i];
-		size_t   index  = mMapData->getIndex(object->getPos());
-		Point    tile   = mMapData->getTiles()[index].getPos();
+		pos = mMapData->getTiles()[i].getPos();
 
-		auto sprite = object->getSprite();
+		Scenery* scenery = mMapData->getTiles()[i].getScenery();
 
-		size_t x = sprite->single()->getOffset().X * scale;
-		size_t y = sprite->single()->getOffset().Y * scale;
+		if (scenery)
+		{
+			auto sprite = scenery->getSprite();
 
-		Point center = Point(tile.X + Tile::Width / 2 * scale, tile.Y + Tile::Height / 2 * scale);
+			size_t x = sprite->single()->getOffset().X * scale;
+			size_t y = sprite->single()->getOffset().Y * scale;
 
-		sprite->single()->draw(Point(dstPos.X + center.X - x, dstPos.Y + center.Y - y), Point(sprite->single()->getSize().X * scale, sprite->single()->getSize().Y * scale));
+			Point center = Point(pos.X + Tile::Width / 2 * scale, pos.Y + Tile::Height / 2 * scale);
+
+			sprite->single()->draw(Point(dstPos.X + center.X - x, dstPos.Y + center.Y - y), Point(sprite->single()->getSize().X * scale, sprite->single()->getSize().Y * scale));
+		}
 	}
 }

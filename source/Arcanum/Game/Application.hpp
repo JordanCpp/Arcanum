@@ -3,7 +3,7 @@
 
 #include <Arcanum/Game/Settings.hpp>
 #include <Arcanum/UI/MainMenu.hpp>
-#include <Arcanum/Managers/SpriteManager.hpp>
+#include <Arcanum/Managers/ObjectManager.hpp>
 #include <Arcanum/Objects/Map.hpp>
 
 namespace arcanum
@@ -14,6 +14,7 @@ namespace arcanum
 		{
 		public:
 			Application(Settings* settings);
+			~Application();
 			void run();
 		private:
 			loaders::ArtLoader mArtLoader;
@@ -22,6 +23,7 @@ namespace arcanum
 			graphics::Render mRender;
 			managers::FileManager mFileManager;
 			managers::SpriteManager mSpriteManager;
+			managers::ObjectManager mObjectManager;
 			objects::MapData mMapData;
 			objects::Map mMap;
 			ui::MainMenu mMainMenu;

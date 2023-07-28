@@ -4,6 +4,21 @@ using namespace arcanum::math;
 using namespace arcanum::objects;
 using namespace arcanum::graphics;
 
+Tile::Tile() :
+	mScenery(nullptr)
+{
+}
+
+Scenery* Tile::getScenery()
+{
+	return mScenery;
+}
+
+void Tile::setScenery(Scenery* value)
+{
+	mScenery = value;
+}
+
 const Point& Tile::getPos()
 {
 	return mPos;

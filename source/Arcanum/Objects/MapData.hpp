@@ -15,11 +15,9 @@ namespace arcanum
 			const math::Point& getSize();
 			size_t getIndex(const math::Point& pos);
 			std::vector<Tile>& getTiles();
-			std::vector<Scenery>& getSceneries();
 		private:
 			math::Point mSize;
 			std::vector<Tile> mTiles;
-			std::vector<Scenery> mSceneries;
 		};
 	}
 }

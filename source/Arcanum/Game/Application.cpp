@@ -10,6 +10,7 @@ Application::Application(Settings* settings) :
 	mWindow(settings->getWindowSize(), settings->getWindowTitle()),
 	mRender(&mWindow),
 	mSpriteManager(&mRender, &mFileManager, &mArtLoader),
+	mObjectManager(&mSpriteManager),
 	mMainMenu(&mRender),
 	mMap(&mMapData)
 {
@@ -20,15 +21,21 @@ Application::Application(Settings* settings) :
 		mMapData.getTiles()[i].setSprite(mSpriteManager.getSprite("art/tile/grsbse0c.ART"));
 	}
 
-	objects::Scenery scenery;
+	mMapData.getTiles()[mMapData.getIndex(Point(1, 3))].setScenery(mObjectManager.newScenery("art/scenery/engine.ART"));
+	mMapData.getTiles()[mMapData.getIndex(Point(8, 8))].setScenery(mObjectManager.newScenery("art/scenery/tree.ART"));
+}
 
-	scenery.setPos(Point(1, 3));
-	scenery.setSprite(mSpriteManager.getSprite("art/scenery/engine.ART"));
-	mMapData.getSceneries().push_back(scenery);
+Application::~Application()
+{
+	for (size_t i = 0; i < mMapData.getTiles().size(); i++)
+	{
+		objects::Scenery* scenery = mMapData.getTiles()[i].getScenery();
 
-	scenery.setPos(Point(8, 8));
-	scenery.setSprite(mSpriteManager.getSprite("art/scenery/tree.ART"));
-	mMapData.getSceneries().push_back(scenery);
+		if (scenery)
+		{
+			mObjectManager.deleteScenery(scenery);
+		}
+	}
 }
 
 void Application::run()

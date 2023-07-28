@@ -24,8 +24,3 @@ std::vector<Tile>& MapData::getTiles()
 {
 	return mTiles;
 }
-
-std::vector<Scenery>& MapData::getSceneries()
-{
-	return mSceneries;
-}

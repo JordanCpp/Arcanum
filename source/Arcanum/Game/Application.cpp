@@ -21,9 +21,13 @@ Application::Application(Settings* settings) :
 	}
 
 	objects::Scenery scenery;
-	scenery.setPos(Point(7, 4));
-	scenery.setSprite(mSpriteManager.getSprite("art/scenery/tree.ART"));
 
+	scenery.setPos(Point(1, 3));
+	scenery.setSprite(mSpriteManager.getSprite("art/scenery/engine.ART"));
+	mMapData.getSceneries().push_back(scenery);
+
+	scenery.setPos(Point(8, 8));
+	scenery.setSprite(mSpriteManager.getSprite("art/scenery/tree.ART"));
 	mMapData.getSceneries().push_back(scenery);
 }
 

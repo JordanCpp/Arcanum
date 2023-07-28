@@ -1,8 +1,8 @@
 #include <Arcanum/Game/Application.hpp>
 #include <iostream>
 
-using namespace engine::math;
-using namespace engine::graphics;
+using namespace arcanum::math;
+using namespace arcanum::graphics;
 using namespace arcanum::game;
 
 Application::Application(Settings* settings) :

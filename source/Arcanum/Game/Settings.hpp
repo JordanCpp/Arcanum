@@ -2,7 +2,7 @@
 #define ARCANUM_GAME_SETTINGS_HPP
 
 #include <string>
-#include <Engine/Math/Point.hpp>
+#include <Arcanum/Math/Point.hpp>
 
 namespace arcanum
 {
@@ -11,13 +11,13 @@ namespace arcanum
 		class Settings
 		{
 		public:
-			const engine::math::Point& getWindowSize();
-			void setWindowSize(const engine::math::Point& size);
+			const math::Point& getWindowSize();
+			void setWindowSize(const math::Point& size);
 
 			const std::string& getWindowTitle();
 			void setWindowTitle(const std::string& title);
 		private:
-			engine::math::Point mWindowSize;
+			math::Point mWindowSize;
 			std::string mWindowTitle;
 		};
 	}

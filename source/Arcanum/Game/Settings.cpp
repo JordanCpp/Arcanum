@@ -1,6 +1,6 @@
 #include <Arcanum/Game/Settings.hpp>
 
-using namespace engine::math;
+using namespace arcanum::math;
 using namespace arcanum::game;
 
 const Point& Settings::getWindowSize()

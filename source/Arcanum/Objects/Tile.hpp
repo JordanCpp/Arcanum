@@ -1,7 +1,7 @@
 #ifndef ARCANUM_OBJECTS_TILE_HPP
 #define ARCANUM_OBJECTS_TILE_HPP
 
-#include <Engine/Graphics/Sprite.hpp>
+#include <Arcanum/Graphics/Sprite.hpp>
 
 namespace arcanum
 {
@@ -11,7 +11,7 @@ namespace arcanum
 		{
 		public:
 		private:
-			engine::graphics::Sprite* Body;
+			graphics::Sprite* Body;
 		};
 	}
 }

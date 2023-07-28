@@ -2,8 +2,8 @@
 #define ARCANUM_GAME_APPLICATION_HPP
 
 #include <Arcanum/Game/Settings.hpp>
-#include <Engine/UI/MainMenu.hpp>
-#include <Engine/Managers/SpriteManager.hpp>
+#include <Arcanum/UI/MainMenu.hpp>
+#include <Arcanum/Managers/SpriteManager.hpp>
 
 namespace arcanum
 {
@@ -16,12 +16,12 @@ namespace arcanum
 			~Application();
 			void run();
 		private:
-			engine::loaders::ArtLoader mArtLoader;
+			loaders::ArtLoader mArtLoader;
 			Settings* mSettings;
-			engine::graphics::Canvas mCanvas;
-			engine::managers::FileManager mFileManager;
-			engine::managers::SpriteManager mSpriteManager;
-			engine::ui::MainMenu mMainMenu;
+			graphics::Canvas mCanvas;
+			managers::FileManager mFileManager;
+			managers::SpriteManager mSpriteManager;
+			ui::MainMenu mMainMenu;
 		};
 	}
 }

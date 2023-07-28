@@ -2,8 +2,7 @@
 #include <iostream>
 
 using namespace arcanum::game;
-using namespace engine::math;
-using namespace engine::graphics;
+using namespace arcanum::math;
 
 int main(int argc, char* argv[])
 {

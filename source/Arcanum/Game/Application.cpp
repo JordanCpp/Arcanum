@@ -23,6 +23,7 @@ Application::Application(Settings* settings) :
 
 	mMapData.getTiles()[mMapData.getIndex(Point(1, 3))].setScenery(mObjectManager.newScenery("art/scenery/engine.ART"));
 	mMapData.getTiles()[mMapData.getIndex(Point(8, 8))].setScenery(mObjectManager.newScenery("art/scenery/tree.ART"));
+	mMapData.getTiles()[mMapData.getIndex(Point(7, 2))].setScenery(mObjectManager.newScenery("art/scenery/rocks_on_deadgrass_1.ART"));
 }
 
 Application::~Application()
@@ -42,8 +43,8 @@ void Application::run()
 {
 	SDL_Event report = { 0 };
 
-	size_t x    = 0;
-	size_t y    = 0;
+	size_t x    = objects::Tile::Width  * 6;
+	size_t y    = objects::Tile::Height * 5;
 	float scale = 1.0f;
 
 	const size_t step = 50;

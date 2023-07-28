@@ -7,14 +7,11 @@ using namespace arcanum::game;
 
 Application::Application(Settings* settings) :
 	mSettings(settings),
-	mCanvas(settings->getWindowSize(), settings->getWindowTitle()),
-	mSpriteManager(&mCanvas, &mFileManager, &mArtLoader),
-	mMainMenu(&mCanvas)
+	mWindow(settings->getWindowSize(), settings->getWindowTitle()),
+	mRender(&mWindow),
+	mSpriteManager(&mRender, &mFileManager, &mArtLoader),
+	mMainMenu(&mRender)
 
-{
-}
-
-Application::~Application()
 {
 }
 
@@ -22,7 +19,7 @@ void Application::run()
 {
 	SDL_Event report = { 0 };
 
-	while (mCanvas.getEvent(report))
+	while (mWindow.getEvent(report))
 	{
 		mMainMenu.draw();
 
@@ -30,5 +27,7 @@ void Application::run()
 		mSpriteManager.getSprite("art/scenery/Adv_engine.ART")->single()->draw(Point(300, 300));
 		mSpriteManager.getSprite("art/scenery/cave_entrance.ART")->single()->draw(Point(450, 0));
 		mSpriteManager.getSprite("art/monster/cow/cowuwxab.ART")->getImage(27)->draw(Point(50, 400));
+
+		mRender.Draw();
 	}
 }

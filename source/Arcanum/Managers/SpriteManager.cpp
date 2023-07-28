@@ -5,8 +5,8 @@ using namespace arcanum::graphics;
 using namespace arcanum::readers;
 using namespace arcanum::loaders;
 
-SpriteManager::SpriteManager(Canvas* canvas, FileManager* fileManager, ArtLoader* artLoader) :
-	mCanvas(canvas),
+SpriteManager::SpriteManager(Render* render, FileManager* fileManager, ArtLoader* artLoader) :
+	mRender(render),
 	mFileManager(fileManager),
 	mArtLoader(artLoader)
 {
@@ -31,7 +31,7 @@ std::shared_ptr<Sprite> SpriteManager::getSprite(const std::string& path)
         {
             mArtLoader->frame(i);
 
-            Image* image = new Image(mCanvas, mArtLoader->getPixels(), mArtLoader->getSize(), mArtLoader->getOffset(), mArtLoader->getDelta());
+            auto image = std::make_shared<Image>(mRender, mArtLoader->getPixels(), mArtLoader->getSize(), mArtLoader->getOffset(), mArtLoader->getDelta());
 
             result->append(image);
         }

@@ -3,6 +3,7 @@
 
 #include <Arcanum/Graphics/Image.hpp>
 #include <vector>
+#include <memory>
 
 namespace arcanum
 {
@@ -11,13 +12,12 @@ namespace arcanum
 		class Sprite
 		{
 		public:
-			~Sprite();
-			void append(Image* image);
-			Image* getImage(size_t index);
-			Image* single();
+			void append(std::shared_ptr<Image> image);
+			std::shared_ptr<Image> getImage(size_t index);
+			std::shared_ptr<Image> single();
 			size_t getFrames();
 		private:
-			std::vector<Image*> mImages;
+			std::vector<std::shared_ptr<Image>> mImages;
 		};
 	}
 }

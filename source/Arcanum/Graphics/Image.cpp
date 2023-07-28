@@ -4,8 +4,8 @@
 using namespace arcanum::math;
 using namespace arcanum::graphics;
 
-Image::Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :
-	mCanvas(canvas),
+Image::Image(graphics::Render* render, uint8_t* pixels, const Point& size, const Point& offset, const Point& delta) :
+	mRender(render),
     mSize(size),
     mOffset(offset),
     mDelta(delta)
@@ -27,7 +27,7 @@ Image::Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const
     if (!surface)
         throw std::runtime_error(SDL_GetError());
          
-	mTexture = SDL_CreateTextureFromSurface(mCanvas->getRender(), surface);
+	mTexture = SDL_CreateTextureFromSurface(mRender->getRender(), surface);
 
     if (!mTexture)
         throw std::runtime_error(SDL_GetError());
@@ -38,6 +38,11 @@ Image::Image(graphics::Canvas* canvas, uint8_t* pixels, const Point& size, const
 Image::~Image()
 {
 	SDL_DestroyTexture(mTexture);
+}
+
+SDL_Texture* Image::getTexture()
+{
+    return mTexture;
 }
 
 const Point& Image::getSize()
@@ -64,5 +69,5 @@ void Image::draw(const Point& pos)
     rt.w = (int)mSize.X;
     rt.h = (int)mSize.Y;
 
-    SDL_RenderCopy(mCanvas->getRender(), mTexture, nullptr, &rt);
+    SDL_RenderCopy(mRender->getRender(), mTexture, nullptr, &rt);
 }

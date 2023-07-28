@@ -4,8 +4,8 @@ using namespace arcanum::math;
 using namespace arcanum::graphics;
 using namespace arcanum::widgets;
 
-Button::Button(Canvas* canvas, const Point& pos, const Point& size) :
-	Widget(canvas, pos, size)
+Button::Button(Render* render, const Point& pos, const Point& size) :
+	Widget(render, pos, size)
 {
 }
 

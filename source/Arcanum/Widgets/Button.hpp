@@ -10,7 +10,7 @@ namespace arcanum
         class Button : public Widget
         {
         public:
-            Button(graphics::Canvas* canvas, const math::Point& pos, const math::Point& size);
+            Button(graphics::Render* render, const math::Point& pos, const math::Point& size);
             void draw();
         private:
         };

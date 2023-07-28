@@ -1,14 +1,12 @@
-#include <Arcanum/Graphics/Canvas.hpp>
-#include <iostream>
+#include <Arcanum/Graphics/Window.hpp>
 #include <stdexcept>
 
 using namespace arcanum::math;
 using namespace arcanum::graphics;
 
-Canvas::Canvas(const Point& size, const std::string& title) :
+Window::Window(const Point& size, const std::string& title) :
     mRunning(true),
-    mWindow(nullptr),
-    mRender(nullptr)
+    mWindow(nullptr)
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
         throw std::runtime_error(SDL_GetError());
@@ -17,21 +15,15 @@ Canvas::Canvas(const Point& size, const std::string& title) :
 
     if (!mWindow)
         throw std::runtime_error(SDL_GetError());
-
-    mRender = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
-    if (!mRender)
-        throw std::runtime_error(SDL_GetError());
 }
 
-Canvas::~Canvas()
+Window::~Window()
 {
-    SDL_DestroyRenderer(mRender);
     SDL_DestroyWindow(mWindow);
     SDL_Quit();
 }
 
-const Point Canvas::getSize()
+const Point Window::getSize()
 {
     int w = 0;
     int h = 0;
@@ -43,21 +35,17 @@ const Point Canvas::getSize()
     return mSize;
 }
 
-SDL_Renderer* Canvas::getRender()
+SDL_Window* Window::getWindow()
 {
-    return mRender;
+    return mWindow;
 }
 
-bool Canvas::getEvent(SDL_Event& dest)
+bool Window::getEvent(SDL_Event& dest)
 {
     SDL_Event event = { 0 };
 
     if (mRunning)
     {
-        SDL_RenderPresent(mRender);
-        SDL_SetRenderDrawColor(mRender, 0, 0, 0, 255);
-        SDL_RenderClear(mRender);
-
         SDL_PollEvent(&event);
 
         dest = event;

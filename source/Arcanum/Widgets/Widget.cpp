@@ -4,8 +4,8 @@ using namespace arcanum::math;
 using namespace arcanum::graphics;
 using namespace arcanum::widgets;
 
-Widget::Widget(Canvas* canvas, const Point& pos, const Point& size) :
-	mCanvas(canvas),
+Widget::Widget(Render* render, const Point& pos, const Point& size) :
+	mRender(render),
 	mPos(pos),
 	mSize(size)
 {

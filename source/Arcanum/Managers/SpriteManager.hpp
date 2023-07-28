@@ -5,7 +5,6 @@
 #include <Arcanum/Managers/FileManager.hpp>
 #include <Arcanum/Loaders/ArtLoader.hpp>
 #include <unordered_map>
-#include <memory>
 
 namespace arcanum
 {
@@ -14,10 +13,10 @@ namespace arcanum
         class SpriteManager
         {
         public:
-            SpriteManager(graphics::Canvas* canvas, managers::FileManager* fileManager, loaders::ArtLoader * artLoader);
+            SpriteManager(graphics::Render* render, managers::FileManager* fileManager, loaders::ArtLoader * artLoader);
             std::shared_ptr<graphics::Sprite> getSprite(const std::string& path);
         private:
-            graphics::Canvas* mCanvas;
+            graphics::Render* mRender;
             FileManager* mFileManager;
             loaders::ArtLoader* mArtLoader;
             std::unordered_map<std::string, std::shared_ptr<graphics::Sprite>> mSprites;

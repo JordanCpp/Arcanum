@@ -1,7 +1,7 @@
 #ifndef ENGINE_GRAPHICS_IMAGE_HPP
 #define ENGINE_GRAPHICS_IMAGE_HPP
 
-#include <Arcanum/Graphics/Canvas.hpp>
+#include <Arcanum/Graphics/Render.hpp>
 
 namespace arcanum
 {
@@ -10,14 +10,15 @@ namespace arcanum
 		class Image
 		{
 		public:
-			Image(graphics::Canvas* canvas, uint8_t* pixels, const math::Point& size, const math::Point& offset, const math::Point& delta);
+			Image(graphics::Render* render, uint8_t* pixels, const math::Point& size, const math::Point& offset, const math::Point& delta);
 			~Image();
+			SDL_Texture* getTexture();
 			const math::Point& getSize();
 			const math::Point& getOffset();
 			const math::Point& getDelta();
 			void draw(const math::Point& pos);
 		private:
-			graphics::Canvas* mCanvas;
+			graphics::Render* mRender;
 			SDL_Texture* mTexture;
 			math::Point mSize;
 			math::Point mOffset;

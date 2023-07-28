@@ -13,12 +13,12 @@ namespace arcanum
 		{
 		public:
 			Application(Settings* settings);
-			~Application();
 			void run();
 		private:
 			loaders::ArtLoader mArtLoader;
 			Settings* mSettings;
-			graphics::Canvas mCanvas;
+			graphics::Window mWindow;
+			graphics::Render mRender;
 			managers::FileManager mFileManager;
 			managers::SpriteManager mSpriteManager;
 			ui::MainMenu mMainMenu;

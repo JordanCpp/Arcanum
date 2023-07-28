@@ -2,22 +2,17 @@
 
 using namespace arcanum::graphics;
 
-Sprite::~Sprite()
-{
-	for (size_t i = 0; i < mImages.size(); i++)
-		delete mImages[i];
-}
-void Sprite::append(Image* image)
+void Sprite::append(std::shared_ptr<Image> image)
 {
 	mImages.push_back(image);
 }
 
-Image* Sprite::getImage(size_t index)
+std::shared_ptr<Image> Sprite::getImage(size_t index)
 {
-	return mImages[index];
+	return mImages.at(index);
 }
 
-Image* Sprite::single()
+std::shared_ptr<Image> Sprite::single()
 {
 	return getImage(0);
 }

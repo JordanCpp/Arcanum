@@ -10,7 +10,7 @@ namespace arcanum
         class MainMenu
         {
         public:
-            MainMenu(graphics::Canvas* canvas);
+            MainMenu(graphics::Render* render);
             void draw();
         private:
             widgets::Form mForm;

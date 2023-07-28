@@ -10,8 +10,14 @@ namespace arcanum
 		class Tile
 		{
 		public:
+			const math::Point& getSize();
+			void setSize(const math::Point& value);
+
+			const std::shared_ptr<graphics::Sprite> getSprite();
+			void setSize(std::shared_ptr<graphics::Sprite> value);
 		private:
-			graphics::Sprite* Body;
+			math::Point mSize;
+			std::shared_ptr<graphics::Sprite> mBody;
 		};
 	}
 }

@@ -1,7 +1,7 @@
 #ifndef ENGINE_WIDGETS_WIDGET_HPP
 #define ENGINE_WIDGETS_WIDGET_HPP
 
-#include <Arcanum/Graphics/Canvas.hpp>
+#include <Arcanum/Graphics/Render.hpp>
 
 namespace arcanum
 {
@@ -10,10 +10,10 @@ namespace arcanum
         class Widget
         {
         public:
-            Widget(graphics::Canvas* canvas, const math::Point& pos, const math::Point& size);
+            Widget(graphics::Render* render, const math::Point& pos, const math::Point& size);
             virtual void draw() = 0;
         private:
-            graphics::Canvas* mCanvas;
+            graphics::Render* mRender;
             math::Point mPos;
             math::Point mSize;
         };

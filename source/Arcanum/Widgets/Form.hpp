@@ -10,7 +10,7 @@ namespace arcanum
         class Form : public Widget
         {
         public:
-            Form(graphics::Canvas* canvas, const math::Point& pos, const math::Point& size);
+            Form(graphics::Render* render, const math::Point& pos, const math::Point& size);
             void draw();
             void add(Widget* widget);
         private:

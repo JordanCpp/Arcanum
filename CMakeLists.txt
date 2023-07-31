@@ -42,3 +42,5 @@ if (WIN32)
 else()
     target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${ZLIB_LIBRARY})
 endif()
+
+install(TARGETS ${PROJECT_NAME} DESTINATION .)
